@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <context-param>
+        <param-name>pageSize</param-name>
+        <param-value>12</param-value>
+    </context-param>
+    <context-param>
+        <param-name>startIndeex</param-name>
+        <param-value>0</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>aservlet</servlet-name>
+        <servlet-class>com.atlisheng.javaweb.servlet.Aservlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>aservlet</servlet-name>
+        <url-pattern>/a</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>bservlet</servlet-name>
+        <servlet-class>com.atlisheng.javaweb.servlet.Bservlet</servlet-class>
+        <!--<load-on-startup>0</load-on-startup>--><!--此时Bservlet的无参构造先执行-->
+        <!-- <load-on-startup>2</load-on-startup>--><!--此时Aservlet的无参构造先执行，数字下标越小对象创建的优先级越高，缺省表示不在服务器启动时创建servlet对象，一般是缺省，很少服务器启动阶段就创建对象的-->
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>bservlet</servlet-name>
+        <url-pattern>/b</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>logservlet</servlet-name>
+        <servlet-class>com.atlisheng.javaweb.servlet.Loginservlet</servlet-class>
+        <init-param>
+            <param-name>driver</param-name>
+            <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:mysql://127.0.0.1:3306/bjpowernode</param-value>
+        </init-param>
+        <init-param>
+            <param-name>user</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>Haworthia715</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>logservlet</servlet-name>
+        <url-pattern>/logservlet</url-pattern>
+        <url-pattern>/viplogservlet</url-pattern>
+    </servlet-mapping>
+</web-app>

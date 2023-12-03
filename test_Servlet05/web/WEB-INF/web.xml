@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>list</servlet-name>
+        <servlet-class>com.atlisheng.servlet.ListDept</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>list</servlet-name>
+        <url-pattern>/listDept</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>detail</servlet-name>
+        <servlet-class>com.atlisheng.servlet.DetailDept</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>detail</servlet-name>
+        <url-pattern>/detailDept</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>add</servlet-name>
+        <servlet-class>com.atlisheng.servlet.AddDept</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>add</servlet-name>
+        <url-pattern>/addDept</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>save</servlet-name>
+        <servlet-class>com.atlisheng.servlet.SaveDept</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>save</servlet-name>
+        <url-pattern>/saveDept</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>modify</servlet-name>
+        <servlet-class>com.atlisheng.servlet.ModifyDept</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>modify</servlet-name>
+        <url-pattern>/modifyDept</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>com.atlisheng.servlet.DeleteDept</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/deleteDept</url-pattern>
+    </servlet-mapping>
+</web-app>
